@@ -7,23 +7,23 @@ var typeProduct1 = prompt("Какой тип товаров будем прод�
 var typeProduct2 = prompt("Какой тип товаров будем продавать?");
 var typeProduct3 = prompt("Какой тип товаров будем продавать?");
 
+var employers1 = prompt("Имя сотрудника:");
+var employers2 = prompt("Имя сотрудника:");
+var employers3 = prompt("Имя сотрудника:");
+
 /*var i = 0;
 while(i<3){
 	prompt("Какой тип товаров будем продавать?");
 	i++;
 }*/
 
-employers = {
-	name: "Михаил",
-	age: 24,
-	isMerriad: true
-}
+
 
 mainList = {
 	budget: budgetMonth,
 	nameShop: nameShop,
 	shopGoods: [typeProduct1, typeProduct2, typeProduct3],
-	employers: ["name", "age", "isMerriad"],
+	employers: [employers1, employers2, employers3],
 	open: true
 };
 
