@@ -11,9 +11,9 @@ let mainList = {
 		shopGoods: [],
 		employers: {},
 		open: false
-}
+};
 
-for (let i = 0; i < 5; i++) {
+/*for (let i = 0; i < 5; i++) {
 
 		let a = prompt("Какой тип товаров будем продавать?");
 
@@ -23,7 +23,21 @@ for (let i = 0; i < 5; i++) {
 		} else {
 
 		}
-}
+};*/
+
+/*var i = 0;
+while (i < 5) {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+	mainList.shopGoods[i] = a;
+}*/
+
+var i = 0;
+do {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+	mainList.shopGoods[i] = a;
+} while (i < 5);
 
 if (time < 0) {
 		console.log("Такого просто не моет быть");

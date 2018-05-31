@@ -1,46 +1,54 @@
+/*домашее задание 2*/
 
-let num = 50;
-
-if( num < 49) {
-	console.log("Неверно");
-} else if(num > 100) {
-	console.log("Неверно");
-	} else {
-		console.log("Верно!")
-	};
-
-(num == 50)? console.log("Верно!") : console.log("Неверно");
-
-switch (num) {
-	case 49:
-		console.log("Мало");
-		break;
-	case 100:
-		console.log("Много!");
-		break;
-	case 80:
-		console.log("Все ещё много!");
-		break;
-	case 50:
-		console.log("В точку!");
-		break;
-	default:
-		console.log("Не в этот раз");
-		break;
-}
+let money = prompt("Ваш бюджет на месяц?"),
+		name = prompt("Название вашего магазина?"),
+		time = 19;
 
 
-/*while (num < 55) {
-	console.log(num);
-	num++;
+let mainList = {
+		budget: money,
+		shopName: name,
+		shopGoods: [],
+		employers: {},
+		open: false
+};
+
+for (let i = 0; i < 5; i++) {
+
+		let a = prompt("Какой тип товаров будем продавать?");
+
+		if ((typeof(a)) === "string" && (typeof(a)) === null && a != "" && a.length < 50 ) {
+			console.log("Все верно!");
+			mainList.shopGoods[i] = a;
+		} else {
+
+		}
+};
+
+/*var i = 0;
+while (i < 5) {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+	mainList.shopGoods[i] = a;
 }*/
 
-/*do {
-	console.log(num);
-	num++;
-}
-while (num < 55);*/
+/*var i = 0;
+do {
+	let a = prompt("Какой тип товаров будем продавать?");
+	i++;
+	mainList.shopGoods[i] = a;
+} while (i < 5);*/
 
-for (let i = 0; i < 8; i++) {
-	console.log(i);
-}
+if (time < 0) {
+		console.log("Такого просто не моет быть");
+} else if(time > 8 && time < 20) {
+	console.log("Время работать");
+	} else if(time < 24) {
+		console.log("Уже слишком поздно!");
+		} else {
+			console.log("В сутках только 24 часа!")
+		};
+
+alert(mainList.budget / 30);
+
+console.log(mainList);
