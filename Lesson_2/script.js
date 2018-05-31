@@ -17,27 +17,39 @@ for (let i = 0; i < 5; i++) {
 
 		let a = prompt("Какой тип товаров будем продавать?");
 
-		if ((typeof(a)) === "string" && (typeof(a)) === null && a != "" && a.length < 50 ) {
+		if ((typeof(a)) === "string" && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
 			console.log("Все верно!");
 			mainList.shopGoods[i] = a;
 		} else {
-
+			i--; 
 		}
 };
 
-/*var i = 0;
+/*let i = 0;
 while (i < 5) {
 	let a = prompt("Какой тип товаров будем продавать?");
+	if ((typeof(a)) === "string" && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
+			console.log("Все верно!");
+			mainList.shopGoods[i] = a;
+		} else {
+			i--; 
+		}
 	i++;
-	mainList.shopGoods[i] = a;
 }*/
 
-/*var i = 0;
+
+/*let i = 0;
 do {
 	let a = prompt("Какой тип товаров будем продавать?");
-	i++;
-	mainList.shopGoods[i] = a;
-} while (i < 5);*/
+	if ((typeof(a)) === "string" && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
+			console.log("Все верно!");
+			mainList.shopGoods[i] = a;
+		} else {
+			i--; 
+		}
+		i++;
+} while (i < 5);
+console.log(mainList.shopGoods);*/
 
 if (time < 0) {
 		console.log("Такого просто не моет быть");
