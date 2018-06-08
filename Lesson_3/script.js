@@ -13,16 +13,29 @@ function start() {
 		money = prompt("Ваш бюджет на месяц?");
 	}
 
-	name = prompt("Название вашего магазина?").toUpperCase();
-
-	time = 19; // В 3 уроке здесь 21
+	time = 19;
 }
 start();
+
+// Имя магазина
+function askNameShop() {
+	for (let i = 0; i < 1; i++) {
+		name = prompt("Название вашего магазина?");
+		if (name == "" || name == null) {
+			alert("Некоректное имя!!");
+			i--;
+		} else if (!isNaN(name) || name.length > 50) {
+			alert("Некоректное имя, или слишком длинное!!");
+			i--;
+		}
+	}
+}
+askNameShop();
 
 // Объект
 let mainList = {
 		budget: money,
-		shopName: name,
+		shopName: name.toUpperCase(),
 		shopGoods: [],
 		employers: {},
 		open: false,
@@ -35,7 +48,7 @@ function choseGoods() {
 
 			let a = prompt("Какой тип товаров будем продавать?");
 
-			if ((typeof(a)) === "string" && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
+			if ((typeof(a)) === "string" && isNaN(a) && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
 				console.log("Все верно!");
 				mainList.shopGoods[i] = a;
 			} else {
@@ -74,21 +87,22 @@ function discountSys() {
 		return price - num_percent;
 	}
 }
-discountSys()
+discountSys();
 
 function employers() {
 	for (let i = 0; i < 4; i++) {
 
 			let a = prompt("Ваше имя сотрудника?");
 
-			if ((typeof(a)) === "string" && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
+			if ((typeof(a)) === "string" && isNaN(a) && (typeof(a)) !== null && a !== "" && a.length < 50 ) {
 				console.log("Все верно!");
-				mainList.employers[i] = a;
+
+				mainList.employers[i] = i+1 + " - " + a;
 			} else {
 				i--;
 			}
 	}
 }
-employers()
+employers();
 
 console.log(mainList);
