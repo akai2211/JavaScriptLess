@@ -1,0 +1,23 @@
+body {
+	padding-top: 50px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: green;
+	color: #fff;
+	border-radius: 10px;
+	width: 200px;
+	height: 50px;
+}
+
+a {
+	display: block;
+	margin-top: 50px;
+}
+
+.overlay {
+	background-color: pink;
+	padding: 20px;
+	display: inline-block;
+}
