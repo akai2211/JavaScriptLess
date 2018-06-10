@@ -6,7 +6,7 @@ let open = document.getElementById('open-btn'),
 		employers_value = document.getElementsByClassName('employers-value')[0],
 		discount_value = document.getElementsByClassName('discount-value')[0],
 		isopen_value = document.getElementsByClassName('isopen-value')[0],
-
+	
 		goods_item = document.getElementsByClassName('goods-item'),
 		goods_btn = document.getElementsByTagName('button')[1],
 		budget_btn = document.getElementsByTagName('button')[2],
@@ -14,4 +14,4 @@ let open = document.getElementById('open-btn'),
 		choose_item = document.querySelector('.choose-item'),
 		time_value = document.querySelector('.time-value'),
 		count_budget_value = document.querySelector('.count-budget-value'),
-		employers = document.querySelectorAll('.hire-employers-item');
+		hire_employers = document.querySelectorAll('.hire-employers-item');

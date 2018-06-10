@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24008019-7352-4b02-94c2-62a47b151db3" name="Default" comment="" />
+    <list default="true" id="24008019-7352-4b02-94c2-62a47b151db3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Lesson_5/2/js/style.js" afterPath="$PROJECT_DIR$/Lesson_5/2/js/style.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lesson_5/js/script.js">
+      <file leaf-file-name="style.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lesson_5/2/js/style.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="68" lean-forward="true" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
+            <state relative-caret-position="176">
+              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -33,6 +35,7 @@
         <option value="$PROJECT_DIR$/Lesson_3/script.js" />
         <option value="$PROJECT_DIR$/Lesson_4/script.js" />
         <option value="$PROJECT_DIR$/Lesson_5/js/script.js" />
+        <option value="$PROJECT_DIR$/Lesson_5/2/js/style.js" />
       </list>
     </option>
   </component>
@@ -92,6 +95,13 @@
               <item name="JavaScriptLess" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaScriptLess" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Lesson_5" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="2" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="JavaScriptLess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaScriptLess" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Lesson_5" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="2" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -131,12 +141,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527770675483</updated>
-      <workItem from="1527770677906" duration="16262000" />
+      <workItem from="1527770677906" duration="16544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16262000" />
+    <option name="totallyTimeSpent" value="16544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
@@ -188,7 +198,7 @@
         <state relative-caret-position="176">
           <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -198,7 +208,7 @@
         <state relative-caret-position="633">
           <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -207,6 +217,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="68" lean-forward="true" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_5/2/js/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding />
         </state>
       </provider>
