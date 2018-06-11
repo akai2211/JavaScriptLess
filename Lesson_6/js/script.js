@@ -13,15 +13,17 @@ let open = document.getElementById('open-btn'),
 		goods_btn = document.getElementsByTagName('button')[1],
 		budget_btn = document.getElementsByTagName('button')[2],
 		employers_btn = document.getElementsByTagName('button')[3],
+		make_discont_btn = document.getElementsByTagName('button')[4],
 		choose_item = document.querySelector('.choose-item'),
 		time_value = document.querySelector('.time-value'),
 		count_budget_value = document.querySelector('.count-budget-value'),
-		hire_employers_item = document.querySelectorAll('.hire-employers-item');
+		hire_employers_item = document.querySelectorAll('.hire-employers-item'),
+		make_discont_value = document.querySelector('.make-discont-value');
 
 
 // Объявление переменных
 let money,
-		name,
+		// name,
 		price;
 
 // Действия при нажатии "открыть магазин"
@@ -45,6 +47,8 @@ open.addEventListener("click", () => {
 		}
 	}
 	name_value.textContent = name;
+	mainList.shopName = name;
+	mainList.open = true;
 });
 
 // Категории товара
@@ -122,6 +126,20 @@ employers_btn.addEventListener("click", () => {
 }
 });
 
+// Дисконтная система
+make_discont_btn.addEventListener("click", () => {
+	let price = make_discont_value.value;
+	mainList.discount = true;
+	if (mainList.discount == true && !isNaN(price) && price != "") {
+		price = (price/100)*80;
+		discount_value.textContent = "Сумма со скидкой: " + price + " руб";
+		discount_value.style.backgroundColor = "green"
+	} else {
+		alert("Введите число");
+	}
+});
+
+
 // Объект
 const mainList = {
 		budget: money,
@@ -130,13 +148,17 @@ const mainList = {
 		employers: {},
 		open: false,
 		discount: false,
-		shopItems: [],
-		makeDiscount: function makeDiscount() {
-			if (mainList.discount == true) {
-				price = (price/100)*80;
-			}
-		}
+		shopItems: []
 };
+
+function checkBtnEmployers() {
+	if (mainList.open == false || employers_value == '') {
+		employers_btn.disabled = true;
+	} else {
+		employers_btn.disabled = false;
+	}
+}
+checkBtnEmployers();
 
 
 console.log(mainList);

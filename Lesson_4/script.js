@@ -20,7 +20,7 @@ start();
 // Имя магазина
 function askNameShop() {
 	for (let i = 0; i < 1; i++) {
-		name = prompt("Название вашего магазина?", "").toUpperCase();
+		name = prompt("Название вашего магазина?", "");
 		if (name == "" || name == null) {
 			alert("Некоректное имя!!");
 			i--;
@@ -35,7 +35,7 @@ askNameShop();
 // Объект
 let mainList = {
 		budget: money,
-		shopName: name,
+		shopName: name.toUpperCase(),
 		shopGoods: [],
 		employers: {},
 		open: false,
@@ -84,10 +84,30 @@ let mainList = {
 			}
 		},
 		choseShopItems: function choseShopItems() {
-			let items = prompt("Перечислите через запятую товары", "");
-
-			mainList.shopItems = items.split(",");
-			mainList.shopItems.push(prompt("Подождите, ещё ", ""));
+			for (let i = 0; i < 1; i++) {
+				let items = prompt("Перечислите через запятую товары", "");
+				if ((typeof(items)) === "string" && isNaN(items) && (typeof(items)) !== null && items !== "" && items.length < 50 ) {
+					let w = items.split(",");
+					let q = 0;
+					while(q < w.length) {
+						if (w[q] !== "") {
+							mainList.shopItems = w[q];
+						}
+						q++;
+					}
+				} else {
+					alert("Не правильно!");
+					i--;
+				}
+				
+			}
+			
+			let items1 = prompt("Подождите, ещё ", "");
+			if (items1 == null || items1 == ""){
+				
+			}else {
+				mainList.shopItems.push(items1);
+			}
 			mainList.shopItems.sort();
 			mainList.shopItems.forEach( function(items, i, choseShopItems) {
 				alert("У нас вы купили: " + (i+1).toString() + " - " + items);
