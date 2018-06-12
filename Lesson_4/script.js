@@ -96,7 +96,7 @@ let mainList = {
 						q++;
 					}
 				}
-				
+			
 			}
 			
 			let items1 = prompt("Подождите, ещё ", "");
