@@ -95,6 +95,8 @@ let mainList = {
 						}
 						q++;
 					}
+				} else {
+					i--;
 				}
 			
 			}
