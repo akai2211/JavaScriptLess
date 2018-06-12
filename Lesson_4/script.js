@@ -87,13 +87,16 @@ let mainList = {
 			for (let i = 0; i < 1; i++) {
 				let items = prompt("Перечислите через запятую товары", "");
 				if ((typeof(items)) === "string" && isNaN(items) && (typeof(items)) !== null && items !== "" && items.length < 50 ) {
-					let w = items.split(",");
+					items = items.split(",");
 					let q = 0;
-					while(q < w.length) {
-						if (w[q] !== "") {
-							mainList.shopItems[q] = w[q];
+					while(q < items.length) {
+						if (items[q] !== "") {
+							mainList.shopItems[q] = items[q];
+							q++;
 						}
-						q++;
+						else {
+							items.splice(q,1);
+						}
 					}
 				} else {
 					i--;
