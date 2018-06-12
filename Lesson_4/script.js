@@ -91,13 +91,10 @@ let mainList = {
 					let q = 0;
 					while(q < w.length) {
 						if (w[q] !== "") {
-							mainList.shopItems = w[q];
+							mainList.shopItems[q] = w[q];
 						}
 						q++;
 					}
-				} else {
-					alert("Не правильно!");
-					i--;
 				}
 				
 			}
