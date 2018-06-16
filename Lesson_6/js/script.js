@@ -17,14 +17,46 @@ let open = document.getElementById('open-btn'),
 		choose_item = document.querySelector('.choose-item'),
 		time_value = document.querySelector('.time-value'),
 		count_budget_value = document.querySelector('.count-budget-value'),
+		count_budget_btn = document.querySelector('.count-budget-btn'),
 		hire_employers_item = document.querySelectorAll('.hire-employers-item'),
 		make_discont_value = document.querySelector('.make-discont-value');
+		make_discont_btn = document.querySelector('.make-discont-btn');
 
 
 // Объявление переменных
 let money,
-		// name,
+		name,
 		price;
+
+// Объект
+let mainList = {
+		budget: money,
+		shopName: name,
+		shopGoods: [],
+		employers: {},
+		open: false,
+		discount: false,
+		shopItems: []
+};
+
+function disabled() {
+	if (mainList.open == false) {
+		goods_item[0].disabled = true;
+		goods_item[1].disabled = true;
+		goods_item[2].disabled = true;
+		goods_item[3].disabled = true;
+		goods_btn.disabled = true;
+		choose_item.disabled = true;
+		time_value.disabled = true;
+		count_budget_btn.disabled = true;
+		hire_employers_item[0].disabled = true;
+		hire_employers_item[1].disabled = true;
+		hire_employers_item[2].disabled = true;
+		make_discont_value.disabled = true;
+		make_discont_btn.disabled = true;
+		}
+}
+disabled();
 
 // Действия при нажатии "открыть магазин"
 open.addEventListener("click", () => {
@@ -48,34 +80,74 @@ open.addEventListener("click", () => {
 	}
 	name_value.textContent = name;
 	mainList.shopName = name;
+	mainList.budget = money;
 	mainList.open = true;
+
+	if (mainList.open == true) {
+		goods_item[0].disabled = false;
+		goods_item[1].disabled = false;
+		goods_item[2].disabled = false;
+		goods_item[3].disabled = false;
+		goods_btn.disabled = false;
+		choose_item.disabled = false;
+		time_value.disabled = false;
+		count_budget_btn.disabled = false;
+		hire_employers_item[0].disabled = false;
+		hire_employers_item[1].disabled = false;
+		hire_employers_item[2].disabled = false;
+		make_discont_value.disabled = false;
+		make_discont_btn.disabled = false;
+		}
+
+
+	console.log(mainList);
 });
+
 
 // Категории товара
 goods_btn.addEventListener("click", () => {
 
 	for (let i = 0; i < goods_item.length; i++) {
 		let a = goods_item[i].value;
-
-		if ((typeof(a)) === "string" && isNaN(a) && (typeof(a)) !== null && a.length < 50 ) {
-			console.log("Все верно! Категории товара");
-			mainList.shopGoods[i] = a;
-			goods_value.textContent = mainList.shopGoods;
-		} else {
-				i--; 
+		if (isNaN(a) && a.length < 50 && a !== "") {
+				console.log("Все верно! Категории товара");
+				a = a.split(",");
+				let z = 0;
+				while(z < a.length) {
+				if (a[z] == "") {
+					a.splice(z,1);
+				mainList.shopGoods[i] = a[z];
+				// z++;
+			} 
 		}
+		
+		} else {
+				alert("Числа вводить нельзя, или слишком днинное имя");
+		}
+		
 	}
 
+	goods_value.textContent = mainList.shopGoods;
+
+	console.log(mainList);
 });
 
 // Продукты чере запятую
 choose_item.addEventListener("change", () => {
 	let items = choose_item.value;
 	if (isNaN(items) && items != "") {
-			mainList.shopItems = items.split(", ");
-			mainList.shopItems.sort();
-
-			items_value.textContent = mainList.shopItems;
+		items = items.split(",");
+		let q = 0;
+		while(q < items.length) {
+			if (items[q] !== "") {
+				mainList.shopItems[q] = items[q];
+				q++;
+			} else {
+				items.splice(q,1);
+			}
+		}
+		mainList.shopItems.sort();
+		items_value.textContent = mainList.shopItems;
 	}
 
 });
@@ -109,6 +181,7 @@ time_value.addEventListener("change", () => {
 budget_btn.addEventListener("click", () => {
 	count_budget_value.value = money / 30;
 });
+document.getElementById("budget").disabled = true;
 
 // Новые сотрудники
 employers_btn.addEventListener("click", () => {
@@ -122,8 +195,20 @@ employers_btn.addEventListener("click", () => {
 				i--;
 			}
 
-		employers_value.textContent += mainList.employers[i] + ", ";
+		employers_value.textContent += mainList.employers[i] + ",";
 }
+});
+
+function checkBtnEmployers() {
+	if (mainList.open == false || employers_value == '') {
+		employers_btn.disabled = true;
+	}
+}
+checkBtnEmployers();
+
+hire_employers_item.addEventListener("change", () => {
+
+	employers_btn.disabled = false;
 });
 
 // Дисконтная система
@@ -139,26 +224,3 @@ make_discont_btn.addEventListener("click", () => {
 	}
 });
 
-
-// Объект
-const mainList = {
-		budget: money,
-		shopName: name,
-		shopGoods: [],
-		employers: {},
-		open: false,
-		discount: false,
-		shopItems: []
-};
-
-function checkBtnEmployers() {
-	if (mainList.open == false || employers_value == '') {
-		employers_btn.disabled = true;
-	} else {
-		employers_btn.disabled = false;
-	}
-}
-checkBtnEmployers();
-
-
-console.log(mainList);
