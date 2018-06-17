@@ -52,6 +52,7 @@ function disabled() {
 		hire_employers_item[0].disabled = true;
 		hire_employers_item[1].disabled = true;
 		hire_employers_item[2].disabled = true;
+		employers_btn.disabled = true;
 		make_discont_value.disabled = true;
 		make_discont_btn.disabled = true;
 		}
@@ -95,6 +96,7 @@ open.addEventListener("click", () => {
 		hire_employers_item[0].disabled = false;
 		hire_employers_item[1].disabled = false;
 		hire_employers_item[2].disabled = false;
+		employers_btn.disabled = false;
 		make_discont_value.disabled = false;
 		make_discont_btn.disabled = false;
 		}
@@ -175,59 +177,27 @@ budget_btn.addEventListener("click", () => {
 });
 document.getElementById("budget").disabled = true;
 
-// Новые сотрудники
-employers_btn.addEventListener("click", () => {
-	for (let i = 0; i < hire_employers_item.length; i++) {
-		let a = hire_employers_item[i].value;
-		mainList.employers[i] = name;
-		if ((typeof(a)) === "string" && isNaN(a) && (typeof(a)) !== null && a.length < 50 ) {
-			console.log("Все верно! Новые сотрудники");
-			mainList.employers[i] = i+1 + " - " + a;
-		} else {
-				i--;
-			}
+// Сотрудники
 
-		employers_value.textContent += mainList.employers[i] + ",";
-}
+
+employers_btn.addEventListener('click', () => {
+		employers_value.textContent = '';
+		for (i = 0; i < hire_employers_item.length; i++) {
+			let employ = hire_employers_item[i].value;
+					if((typeof employ === 'string') && (isNaN(employ)) && employ !== '' &&  employ.length < 50) {
+
+						mainList.employers[i] = employ[0].toUpperCase() + employ.slice(1);
+						employers_value.textContent += mainList.employers[i] + ', '; 
+					} else if(employ == '') {
+							hire_employers_item[i].value = '';
+							alert('Поле номер ' + (i + 1) + ' пустое!');
+
+					} else {
+							hire_employers_item[i].value = '';
+							alert('Поле номер ' + (i + 1) + ' содержит цифры!');   
+					}
+		}
 });
-
-function checkBtnEmployers() {
-	if (mainList.open == false || employers_value == '') {
-		employers_btn.disabled = true;
-	}
-}
-checkBtnEmployers();
-
-hire_employers_item[0].addEventListener("change", () => {
-	let a = hire_employers_item[0];
-	if(isNaN(a) || a == "") {
-		employers_btn.disabled = false;
-	} else {
-		employers_btn.disabled = true
-	}
-
-});
-
-hire_employers_item[1].addEventListener("change", () => {
-	let a = hire_employers_item[0];
-	if(isNaN(a) || a == "") {
-		employers_btn.disabled = false;
-	} else {
-		employers_btn.disabled = true
-	}
-
-});
-
-hire_employers_item[2].addEventListener("change", () => {
-	let a = hire_employers_item[0];
-	if(isNaN(a) || a == "") {
-		employers_btn.disabled = false;
-	} else {
-		employers_btn.disabled = true
-	}
-
-});
-
 
 // Дисконтная система
 make_discont_btn.addEventListener("click", () => {
