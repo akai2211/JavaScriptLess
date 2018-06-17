@@ -56,7 +56,7 @@ function disabled() {
 		make_discont_btn.disabled = true;
 		}
 }
-// disabled();
+disabled();
 
 // Действия при нажатии "открыть магазин"
 open.addEventListener("click", () => {
@@ -110,11 +110,10 @@ goods_btn.addEventListener("click", () => {
 	for (let i = 0; i < goods_item.length; i++) {
 		let a = goods_item[i].value;
 		if (a == "") {
-			containe;
+			continue;
 		} else if (isNaN(a) && a.length < 50) {
 			console.log("Все верно! Категории товара");
-			a.splice(i,1);
-			mainList.shopGoods[i] = a;
+			mainList.shopGoods.push(a);
 		} else {
 			alert("Числа вводить нельзя, или слишком днинное имя");
 		}
@@ -199,9 +198,36 @@ function checkBtnEmployers() {
 }
 checkBtnEmployers();
 
-/*hire_employers_item.addEventListener("change", () => {
-	employers_btn.disabled = false;
-});*/
+hire_employers_item[0].addEventListener("change", () => {
+	let a = hire_employers_item[0];
+	if(isNaN(a) || a == "") {
+		employers_btn.disabled = false;
+	} else {
+		employers_btn.disabled = true
+	}
+
+});
+
+hire_employers_item[1].addEventListener("change", () => {
+	let a = hire_employers_item[0];
+	if(isNaN(a) || a == "") {
+		employers_btn.disabled = false;
+	} else {
+		employers_btn.disabled = true
+	}
+
+});
+
+hire_employers_item[2].addEventListener("change", () => {
+	let a = hire_employers_item[0];
+	if(isNaN(a) || a == "") {
+		employers_btn.disabled = false;
+	} else {
+		employers_btn.disabled = true
+	}
+
+});
+
 
 // Дисконтная система
 make_discont_btn.addEventListener("click", () => {
