@@ -129,11 +129,11 @@ goods_btn.addEventListener("click", () => {
 // Продукты чере запятую
 choose_item.addEventListener("change", () => {
 	let items = choose_item.value;
-	if (isNaN(items) && items != "") {
+	if (isNaN(items) && items !== "") {
 		items = items.split(",");
 		let q = 0;
 		while(q < items.length) {
-			if (items[q] !== "") {
+			if (items[q] !== "" && isNaN(items[q])) {
 				mainList.shopItems[q] = items[q];
 				q++;
 			} else {
@@ -178,25 +178,21 @@ budget_btn.addEventListener("click", () => {
 document.getElementById("budget").disabled = true;
 
 // Сотрудники
-
-
 employers_btn.addEventListener('click', () => {
-		employers_value.textContent = '';
-		for (i = 0; i < hire_employers_item.length; i++) {
-			let employ = hire_employers_item[i].value;
-					if((typeof employ === 'string') && (isNaN(employ)) && employ !== '' &&  employ.length < 50) {
-
-						mainList.employers[i] = employ[0].toUpperCase() + employ.slice(1);
-						employers_value.textContent += mainList.employers[i] + ', '; 
-					} else if(employ == '') {
-							hire_employers_item[i].value = '';
-							alert('Поле номер ' + (i + 1) + ' пустое!');
-
-					} else {
-							hire_employers_item[i].value = '';
-							alert('Поле номер ' + (i + 1) + ' содержит цифры!');   
+	employers_value.textContent = '';
+	for (i = 0; i < hire_employers_item.length; i++) {
+		let employ = hire_employers_item[i].value;
+			if((typeof employ === 'string') && (isNaN(employ)) && employ !== '' &&  employ.length < 50) {
+				mainList.employers[i] = employ[0].toUpperCase() + employ.slice(1);
+				employers_value.textContent += mainList.employers[i] + ', '; 
+			} else if(employ == '') {
+					hire_employers_item[i].value = '';
+					alert('Поле номер ' + (i + 1) + ' пустое!');
+				} else {
+						hire_employers_item[i].value = '';
+						alert('Поле номер ' + (i + 1) + ' содержит цифры!');   
 					}
-		}
+	}
 });
 
 // Дисконтная система
