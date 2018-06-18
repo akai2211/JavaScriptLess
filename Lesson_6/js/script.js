@@ -70,7 +70,7 @@ open.addEventListener("click", () => {
 	budget_value.textContent = money;
 // Код названия магазина
 	for (let i = 0; i < 1; i++) {
-		name = prompt("Название вашего магазина?", "").toUpperCase();
+		name = prompt("Название вашего магазина?", "");
 		if (name == "" || name == null) {
 			alert("Некоректное имя!!");
 			i--;
@@ -80,7 +80,7 @@ open.addEventListener("click", () => {
 		}
 	}
 	name_value.textContent = name;
-	mainList.shopName = name;
+	mainList.shopName = name.toUpperCase();
 	mainList.budget = money;
 	mainList.open = true;
 
