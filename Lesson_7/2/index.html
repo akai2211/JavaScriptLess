@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Урок 7 Таймер времини</title>
+</head>
+<body>
+	<div class="real-time"></div>
+	<script>
+		function realTime() {
+			let myDate = new Date(),
+					myHours = myDate.getHours(),
+					myMinutes = myDate.getMinutes(),
+					mySeconds = myDate.getSeconds();
+
+			let div = document.getElementsByClassName('real-time');
+
+			if (myHours < 10) {
+				myHours = "0" + myHours;
+			}
+			if (myMinutes < 10) {
+				myMinutes = "0" + myMinutes;
+			}
+			if (mySeconds < 10) {
+				mySeconds = "0" + mySeconds;
+			}
+
+			let timeOut = myHours + ":" + myMinutes + ":" + mySeconds;
+			div[0].innerHTML = timeOut;
+			setTimeout(realTime, 1);
+
+		}
+		realTime();
+	</script>
+</body>
+</html>
