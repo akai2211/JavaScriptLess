@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24008019-7352-4b02-94c2-62a47b151db3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Lesson_6/js/script.js" afterPath="$PROJECT_DIR$/Lesson_6/js/script.js" />
+      <change beforePath="$PROJECT_DIR$/Lesson_7/2/index.html" afterPath="$PROJECT_DIR$/Lesson_7/2/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,23 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson_6/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lesson_4/script.js">
+        <entry file="file://$PROJECT_DIR$/Lesson_8/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="93" column="40" lean-forward="false" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="47" />
+            <state relative-caret-position="259">
+              <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -73,8 +61,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1847" />
-    <option name="y" value="226" />
+    <option name="x" value="101" />
+    <option name="y" value="251" />
     <option name="width" value="1874" />
     <option name="height" value="428" />
   </component>
@@ -93,7 +81,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ColorIdeProjectViewPane">
         <subPane>
           <expand>
@@ -109,18 +96,19 @@
             <path>
               <item name="JavaScriptLess" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaScriptLess" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Lesson_6" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Lesson_8" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="JavaScriptLess" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaScriptLess" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Lesson_6" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Lesson_8" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -156,17 +144,18 @@
       <updated>1527770675483</updated>
       <workItem from="1527770677906" duration="19163000" />
       <workItem from="1528721193758" duration="1806000" />
+      <workItem from="1529356170453" duration="46000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20969000" />
+    <option name="totallyTimeSpent" value="21015000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1866" y="-8" width="1874" height="1096" extended-state="7" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25248072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25523704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -207,6 +196,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_4/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="93" column="40" lean-forward="false" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_6/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_2/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -230,20 +237,28 @@
     <entry file="file://$PROJECT_DIR$/Lesson_5/js/script.js" />
     <entry file="file://$PROJECT_DIR$/Lesson_5/2/js/style.js" />
     <entry file="file://$PROJECT_DIR$/Lesson_6/js/1.js" />
+    <entry file="file://$PROJECT_DIR$/Lesson_4/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="93" column="40" lean-forward="false" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson_6/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
-          <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+          <caret line="72" column="4" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson_4/script.js">
+    <entry file="file://$PROJECT_DIR$/Lesson_8/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="93" column="40" lean-forward="false" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="47" />
+        <state relative-caret-position="259">
+          <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
           <folding />
         </state>
       </provider>

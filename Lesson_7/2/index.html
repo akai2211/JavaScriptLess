@@ -15,6 +15,7 @@
 
 			let div = document.getElementsByClassName('real-time');
 
+			
 			if (myHours < 10) {
 				myHours = "0" + myHours;
 			}
@@ -27,7 +28,7 @@
 
 			let timeOut = myHours + ":" + myMinutes + ":" + mySeconds;
 			div[0].innerHTML = timeOut;
-			setTimeout(realTime, 1);
+			setTimeout(realTime, 1000);
 
 		}
 		realTime();
