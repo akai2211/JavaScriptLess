@@ -1,8 +1,6 @@
 let age = document.getElementById('age');
 
 function showUser(surname, name) {
-	this.name = name;
-	this.surname = surname;
-	alert("Пользователь " + surname + " " + name + ", его возраст " + this.age.value);
+	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
 }
-showUser("Лаптев", "Григорий");
+showUser.call(age, "Лаптев","Григорий");

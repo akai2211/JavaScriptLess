@@ -91,30 +91,27 @@ setClock("timer", deadline);
 let more = document.querySelector(".more"),
 		overlay = document.querySelector(".overlay"),
 		close = document.querySelector(".popup-close"),
-		des_btn = document.querySelectorAll(".description-btn");
+
+		des_btn = document.querySelector(".description-btn"),
+		infoDiv = document.querySelector(".info");
 
 more.addEventListener("click", function() {
 	this.classList.add("more-splash");
 	overlay.style.display = "block";
 	document.body.style.overflow = "hidden";
 });
+
+infoDiv.addEventListener("click", function(event) {
+	if (event.target && event.target.className == "description-btn") {
+		des_btn.classList.add("more-splash");
+		overlay.style.display = "block";
+		document.body.style.overflow = "hidden";
+	}
+})
+
 close.addEventListener("click", function() {
 	overlay.style.display = "none";
 	more.classList.remove("more-splash");
 	document.body.style.overflow = "";
 });
-
-
-for (let i = 0; i < des_btn.length; i++) {
-	des_btn[i].addEventListener("click", function() {
-		this.classList.add("more-splash");
-		overlay.style.display = "block";
-		document.body.style.overflow = "hidden";
-	});
-	close.addEventListener("click", function() {
-		overlay.style.display = "none";
-		des_btn[i].classList.remove("more-splash");
-		document.body.style.overflow = "";
-	});
-};
 });
