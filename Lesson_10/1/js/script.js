@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", () => {
 // Табы
 	let tab = document.getElementsByClassName("info-header-tab"),
 			tabContent = document.getElementsByClassName("info-tabcontent"),
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
-	info.addEventListener("click", function(event) {
+	info.addEventListener("click", (event) => {
 		let target = event.target;
 		if(target.className == "info-header-tab") {
 			for (let i = 0; i < tab.length; i++) {
@@ -43,13 +43,13 @@ function getTimeRemaining(endtime) {
 			hours = Math.floor( (t/(1000*60*60)) );
 
 			if (hours < 10) {
-					hours = "0" + hours;
+					hours = `0${hours}`;
 			}
 			if (minutes < 10) {
-					minutes = "0" + minutes;
+					minutes = `0${minutes}`;
 			}
 			if (seconds < 10) {
-					seconds = "0" + seconds;
+					seconds = `0${seconds}`;
 			}
 
 
@@ -95,13 +95,13 @@ let more = document.querySelector(".more"),
 		des_btn = document.querySelector(".description-btn"),
 		infoDiv = document.querySelector(".info");
 
-more.addEventListener("click", function() {
+more.addEventListener("click", () => {
 	this.classList.add("more-splash");
 	overlay.style.display = "block";
 	document.body.style.overflow = "hidden";
 });
 
-infoDiv.addEventListener("click", function(event) {
+infoDiv.addEventListener("click", (event) => {
 	if (event.target && event.target.className == "description-btn") {
 		des_btn.classList.add("more-splash");
 		overlay.style.display = "block";
@@ -109,7 +109,7 @@ infoDiv.addEventListener("click", function(event) {
 	}
 })
 
-close.addEventListener("click", function() {
+close.addEventListener("click", () => {
 	overlay.style.display = "none";
 	more.classList.remove("more-splash");
 	document.body.style.overflow = "";
