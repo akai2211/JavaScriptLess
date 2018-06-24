@@ -86,7 +86,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	setClock("timer", deadline);
 
 // Модальное окно
-	
 	let more = document.querySelector(".more"),
 		overlay = document.querySelector(".overlay"),
 		close = document.querySelector(".popup-close"),
@@ -114,19 +113,20 @@ window.addEventListener("DOMContentLoaded", () => {
 		document.body.style.overflow = "";
 	});
 
-// Form
+// Форма
+	let form = document.getElementsByClassName("main-form")[0],
+		input = form.getElementsByTagName("input"),
+		statusMessage = document.createElement("div");
+	
 	let message = new Object();
 	message.loading = "Загрузка...";
 	message.success = "Спасибо! Скоро мы с вами свяжимся";
 	message.failure = "Что-то пошло не так...";
 	
-	let form = document.getElementsByClassName("main-form")[0],
-		input = form.getElementsByTagName("input"),
-		statusMessage = document.createElement("div");
 	statusMessage.classList.add("status");
 	
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
+	
+	function formCreate() {
 		form.appendChild(statusMessage);
 		// AJAX
 		let request = new XMLHttpRequest();
@@ -147,13 +147,17 @@ window.addEventListener("DOMContentLoaded", () => {
 					// Добавляем контент на страницу
 				} else {
 					statusMessage.innerHTML = message.failure;
-				}
-			}
+				};
+			};
 		};
 		for (let i = 0; i < input.length; i++) {
-			input[i] .value = "";
+			input[i].value = "";
 			// Очищаем поля ввода
 		};
+	};
+	form.addEventListener("submit", (event) => {
+		// event.preventDefault();
+		formCreate();
 	});
 
 
@@ -161,7 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Slider
+// Слайдер
 	let slideIndex = 1,
 		slides = document.getElementsByClassName("slider-item"),
 		prev = document.querySelector(".prev"),
@@ -211,5 +215,45 @@ window.addEventListener("DOMContentLoaded", () => {
 			};
 		};
 	});
+
+// Калькулятор
+	let persons = document.getElementsByClassName("counter-block-input")[0],
+		restDays = document.getElementsByClassName("counter-block-input")[1],
+		place = document.getElementById("select"),
+		totalValue = document.getElementById("total"),
+		personsSum = 0,
+		daysSum = 0,
+		total = 0;
+	
+	totalValue.innerHTML = 0;
+	
+	persons.addEventListener("change", function () {
+		personsSum = +this.value;
+		total = (daysSum + personsSum)*4000;
+		if (restDays.value == "") {
+			totalValue.innerHTML = 0;
+		} else {
+			totalValue.innerHTML = total;
+		}
+	});
+	restDays.addEventListener("change", function () {
+		daysSum = +this.value;
+		total = (daysSum + personsSum)*4000;
+		if (persons.value == "") {
+			totalValue.innerHTML = 0;
+		} else {
+			totalValue.innerHTML = total;
+		}
+	});
+	
+	place.addEventListener("change", function () {
+		if (restDays.value == "" || persons.value == "") {
+			totalValue.innerHTML = 0;
+		} else {
+			total = total * this.options[this.selectedIndex].value;
+			totalValue = total;
+		}
+	});
+	
 	
 });
