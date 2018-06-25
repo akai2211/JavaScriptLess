@@ -2,14 +2,8 @@ $(document).ready(function(){
 
 //Получить консультацию
 	$(".main_btn:eq(0)").on("click", function(){
-		$(".overlay").animate (
-		{
-			opacity:"toggle"
-		});
-		$(".modal").slideDown(1500)
-		$(".modal").animate({
-			opacity: "0.8"
-		});
+		$(".overlay").fadeToggle("slow");
+		$(".modal").slideDown(1500);
 	});
 
 // Закрыть окно
@@ -23,24 +17,14 @@ $(document).ready(function(){
 
 // Выбрать тур
 	$(".main_btna:eq(0)").on("click", function(){
-		$(".overlay").animate (
-		{
-			opacity:"toggle"
-		});
-		$(".modal").slideDown(1500)
-		$(".modal").animate({
-			opacity: "0.8"
-		});
+		$(".overlay").fadeToggle("slow");
+		$(".modal").slideDown(1500);
 	});
 
 //Расписание туров
 	 $("li:nth-child(2)").on("click", function(){
-		
-		$(".overlay").animate (
-		{
-			opacity:"toggle"
-		});
-		$(".modal").slideDown(1500)
+		$(".overlay").fadeToggle("slow");
+		$(".modal").slideDown(1500);
 	});
 
 });
