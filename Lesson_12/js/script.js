@@ -114,52 +114,62 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 // Форма
+	let form = document.getElementsByClassName("main-form")[0],
+			input = form.getElementsByTagName("input"),
+			statusMessage = document.createElement("div");
+
+	let formFooter = document.getElementById("form"),
+			iputFooter = formFooter.getElementsByTagName("input"),
+			submitFooter =formFooter.getElementsByTagName("button");
+
+
 	let message = new Object();
 	message.loading = "Загрузка...";
 	message.success = "Спасибо! Скоро мы с вами свяжимся";
 	message.failure = "Что-то пошло не так...";
 
-	let form = document.getElementsByClassName("main-form")[0],
-			input = form.getElementsByTagName("input"),
-			statusMessage = document.createElement("div");
+	statusMessage.classList.add("status");
 
-			statusMessage.classList.add("status");
+	function formCreate() {
 
-			form.addEventListener("submit", (event) => {
-				event.preventDefault();
-				form.appendChild(statusMessage);
-				// AJAX
-				let request = new XMLHttpRequest();
-				request.open("POST", "server.php");
+		// AJAX
+		let request = new XMLHttpRequest();
+		request.open("POST", "server.php");
 
-				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-				let formData = new FormData(form);
+		let formData = new FormData(form);
 
-				request.send(formData);
+		request.send(formData);
 
-				request.onreadystatechange = () => {
-					if (request.readyState < 4) {
-						statusMessage.innerHTML = message.loading;
-					} else if (request.readyState === 4) {
-						if (request.status == 200 && request.status < 300) {
-							statusMessage.innerHTML = message.success;
-							// Добавляем контент на страницу
-						} else {
-							statusMessage.innerHTML = message.failure;
-						}
-					}
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+				statusMessage.innerHTML = message.loading;
+			} else if (request.readyState === 4) {
+				if (request.status == 200 && request.status < 300) {
+					statusMessage.innerHTML = message.success;
+					// Добавляем контент на страницу
+				} else {
+					statusMessage.innerHTML = message.failure;
 				};
-				for (let i = 0; i < input.length; i++) {
-					input[i].value = "";
-					// Очищаем поля ввода
-				};
-			});
+			};
+		};
+		for (let i = 0; i < input.length; i++) {
+			input[i].value = "";
+			// Очищаем поля ввода
+		};
+	};
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		form.appendChild(statusMessage);
+		formCreate();
+	});
 
-
-
-
-
+	formFooter.addEventListener("submit", (event) => {
+		event.preventDefault();
+		formFooter.appendChild(statusMessage);
+		formCreate();
+	});
 
 // Слайдер
 	let slideIndex = 1,
@@ -226,7 +236,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 		persons.addEventListener("change", function () {
 			personsSum = +this.value;
 			total = (daysSum + personsSum)*4000;
-			if (restDays.value == "") {
+			if (restDays.value == "" || restDays.value == "0" || persons.value == "" || persons.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
 					totalValue.innerHTML = total;
@@ -235,7 +245,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 		restDays.addEventListener("change", function () {
 			daysSum = +this.value;
 			total = (daysSum + personsSum)*4000;
-			if (persons.value == "") {
+			if (persons.value == "" || persons.value == "0" || restDays.value == "" || restDays.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
 					totalValue.innerHTML = total;
@@ -243,7 +253,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 		});
 
 		place.addEventListener("change", function () {
-			if (restDays.value == "" || persons.value == "") {
+			if (restDays.value == "" || persons.value == "" || restDays.value == "0" || persons.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
 					let a = total;
@@ -252,15 +262,14 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 		});
 
 		persons.onkeypress = (event) => {
-			if (event.key === "." || event.key === "+" || event.key === "e" || event.key === ',' || event.key === '-')
+			if (event.key === "." || event.key === "," || event.key === "+" || event.key === '-' || event.key === 'e')
 				return false;
 			};
 
 		restDays.onkeypress = (event) => {
-			if (event.key === "." || event.key === "," || event.key === "+" || event.key === 'e' || event.key === '-')
+			if (event.key === "." || event.key === "," || event.key === "+" || event.key === '-' || event.key === 'e')
 				return false;
 			};
-
 
 
 
