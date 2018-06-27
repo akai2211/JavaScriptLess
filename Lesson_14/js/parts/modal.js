@@ -3,7 +3,7 @@ function modal() {
 			overlay = document.querySelector(".overlay"),
 			close = document.querySelector(".popup-close"),
 
-			des_btn = document.querySelector(".description-btn"),
+			des_btn = document.querySelectorAll(".description-btn"),
 			infoDiv = document.querySelector(".info");
 
 	more.addEventListener("click", function() {
@@ -14,9 +14,9 @@ function modal() {
 
 	infoDiv.addEventListener("click", (event) => {
 		if (event.target && event.target.className == "description-btn") {
-			des_btn.classList.add("more-splash");
 			overlay.style.display = "block";
 			document.body.style.overflow = "hidden";
+			// des_btn.classList.add("more-splash");
 		};
 	});
 
