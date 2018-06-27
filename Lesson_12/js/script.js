@@ -235,7 +235,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 
 		persons.addEventListener("change", function () {
 			personsSum = +this.value;
-			total = (daysSum + personsSum)*4000;
+			total = (daysSum + personsSum) * 4000 * place.options[place.selectedIndex].value;;
 			if (restDays.value == "" || restDays.value == "0" || persons.value == "" || persons.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
@@ -244,7 +244,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 		});
 		restDays.addEventListener("change", function () {
 			daysSum = +this.value;
-			total = (daysSum + personsSum)*4000;
+			total = (daysSum + personsSum) * 4000 * place.options[place.selectedIndex].value;
 			if (persons.value == "" || persons.value == "0" || restDays.value == "" || restDays.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
@@ -256,7 +256,7 @@ let persons = document.getElementsByClassName("counter-block-input")[0],
 			if (restDays.value == "" || persons.value == "" || restDays.value == "0" || persons.value == "0") {
 				totalValue.innerHTML = 0;
 			} else {
-					let a = total;
+					let a = (daysSum + personsSum) * 4000;
 					totalValue.innerHTML = a * this.options[this.selectedIndex].value;
 			}
 		});
