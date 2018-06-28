@@ -293,8 +293,8 @@ a.active:after {
 }
 
 .container-calc table {
-  border-collapse: separate!important;
-  border-spacing: 2px!important;
+  /*border-collapse: separate!important;
+  border-spacing: 2px!important;*/
 }
 
 
